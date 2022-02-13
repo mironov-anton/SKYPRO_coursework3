@@ -1,11 +1,12 @@
 # Main packages
-Flask
+Flask~=2.0.2
 flask-restx
 Flask-CORS
 Flask-SQLAlchemy
-marshmallow
+marshmallow~=3.14.1
 PyJWT
+SQLAlchemy~=1.4.31
 
 # For test
-pytest
+pytest~=7.0.0
 pytest-cov
