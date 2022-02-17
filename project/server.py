@@ -3,7 +3,7 @@ from flask_cors import CORS
 from flask_restx import Api
 
 from project.setup_db import db
-from project.views import genres_ns, directors_ns, movies_ns
+from project.views import genres_ns, directors_ns, movies_ns, auth_ns
 
 api = Api(
     authorizations={
@@ -29,6 +29,7 @@ def create_app(config_obj):
     api.add_namespace(genres_ns)
     api.add_namespace(directors_ns)
     api.add_namespace(movies_ns)
+    api.add_namespace(auth_ns)
     # api.add_namespace(users_ns)
 
     return app
