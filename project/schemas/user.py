@@ -7,4 +7,4 @@ class UserSchema(Schema):
     password = fields.Str(required=True)
     name = fields.Str()
     surname = fields.Str()
-    favorite_genre = fields.Int()
+    favorite_genre = fields.Str()

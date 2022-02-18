@@ -15,7 +15,7 @@ class UserDAO:
     def get_by_email(self, email: str):
         return self._db_session.query(User).filter(User.email == email).one_or_none()
 
-    def create(self, user_d):
+    def create(self, user_d: dict):
         try:
             ent = User(**user_d)
             self._db_session.add(ent)
@@ -23,3 +23,7 @@ class UserDAO:
             return ent
         except sqlalchemy.exc.IntegrityError:
             raise DuplicateError
+
+    def update(self, user):
+        self._db_session.add(user)
+        self._db_session.commit()
